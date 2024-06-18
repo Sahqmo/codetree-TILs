@@ -10,11 +10,7 @@ for (let i = 0; i < input.length; i++) {
     let is_sick = person_info[0] === "Y" ? true : false
     let temperature = person_info[1]
 
-    if (is_sick) {
-        arr[0 + 2 * Number(temperature >= 37)] += 1
-    } else {
-        arr[3 - 2 * Number(temperature >= 37)] += 1
-    }
+    arr[3 - Number(is_sick) - 2 * Number(temperature >= 37)] += 1
 }
 
 
