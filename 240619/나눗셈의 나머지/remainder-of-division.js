@@ -5,7 +5,7 @@ let [a, b] = fs.readFileSync(0).toString().split(" ").map(Number);
 let arr = Array(b).fill(0);
 let num = a
 
-while (num / b > 0) {
+while (num > 1) {
     arr[num % b] += 1
     num = Math.floor(num / b)
 }
@@ -13,9 +13,7 @@ while (num / b > 0) {
 let result = 0
 
 for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > 0) {
-        result += Math.pow(i, 2)
-    }
+    result += Math.pow(arr[i], 2)
 }
 
 console.log(result)
