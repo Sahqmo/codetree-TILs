@@ -5,8 +5,8 @@ let arr = ['L', 'E', 'B', 'R', 'O', 'S'];
 
 let idx = -1
 
-for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === input) idx = i
+for (let i = 0; i < 6; i++) {
+    if (arr[i] === input) idx = i;
 }
 
 if (idx === -1) {
