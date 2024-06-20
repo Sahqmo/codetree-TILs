@@ -7,7 +7,7 @@ let arr = input[1].split(" ").map(Number);
 let minSub = Number.MAX_SAFE_INTEGER;
 
 for (let i = 0; i < n; i++) {
-    for (let j = i + 1; j < n - 1; j++) {
+    for (let j = i + 1; j < n; j++) {
         if (arr[j] - arr[i] < minSub) minSub = arr[j] - arr[i];
     }
 }
