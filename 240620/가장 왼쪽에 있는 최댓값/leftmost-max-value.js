@@ -6,7 +6,7 @@ let maxVal;
 
 let str = ""
 
-while (arr.length > 1){
+while (arr.length > 0){
     maxVal = Number.MIN_SAFE_INTEGER;
     for (i in arr) {
         if (arr[i] > maxVal) {
