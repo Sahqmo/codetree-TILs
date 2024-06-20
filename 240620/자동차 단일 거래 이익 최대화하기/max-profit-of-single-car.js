@@ -1,24 +1,20 @@
-let fs = require("fs");
+// 변수 선언 및 입력
+const fs = require("fs");
 let input = fs.readFileSync(0).toString().trim().split("\n");
 
 let n = Number(input[0]);
-let arr = input[1].split(" ").map(Number);
-let cheapest_year = 0
+let price = input[1].split(" ").map(Number);
 
-let minVal = Number.MAX_SAFE_INTEGER;
-let profit = 0
+// 배열을 앞에서부터 순회하며 사는 시점의 후보를 선택합니다
+let maxProfit = 0;
+for (let i = 0; i < n; i++) {
+    // 사는 시점의 다음 해부터 순회하며 파는 시점의 후보를 선택합니다
+    for (let j = i + 1; j < n; j++) {
+        let profit = price[j] - price[i];
 
-for (i in arr) {
-    if (arr[i] < minVal) {
-        cheapest_year = Number(i);
-        minVal = arr[i]
+        if (profit > maxProfit)
+            maxProfit = profit;
     }
 }
 
-for (let i = cheapest_year + 1; i < n; i++) {
-    if (arr[i] - minVal > profit) {
-        profit = arr[i] - minVal
-    }
-}
-
-console.log(profit)
+console.log(maxProfit);
