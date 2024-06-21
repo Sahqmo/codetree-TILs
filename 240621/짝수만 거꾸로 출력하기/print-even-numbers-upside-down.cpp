@@ -12,7 +12,7 @@ int main() {
         cin >> a[i];
     }
 
-    for (int i = n - 1; i > 0; i--) {
+    for (int i = n - 1; i >= 0; i--) {
         if (a[i] % 2 == 0) {
             cout << a[i] << " ";
         }
